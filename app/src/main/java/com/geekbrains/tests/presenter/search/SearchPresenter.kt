@@ -25,13 +25,13 @@ class SearchPresenter internal constructor(private val repository: GitHubReposit
         repository.searchGithub(searchQuery, this)
     }
 
-    override fun onAttach(view: ViewSearchContract) {
+    override fun onAttach(view: ViewContract) {
         if (view != viewContract) {
-            viewContract = view
+            viewContract = view as ViewSearchContract
         }
     }
 
-    override fun onDetach(view: ViewSearchContract) {
+    override fun onDetach(view: ViewContract) {
         if (view == viewContract) {
             viewContract = null
         }
