@@ -1,3 +1,8 @@
 package com.geekbrains.tests.presenter
 
-interface PresenterContract {}
+import com.geekbrains.tests.view.ViewContract
+
+interface PresenterContract {
+    fun onAttach(view: ViewContract)
+    fun onDetach(view: ViewContract)
+}
